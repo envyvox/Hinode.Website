@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+  background-color: #232323;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.center {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+.category {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.4rem;
+  margin: 2px;
+  border: 1px solid #BA68C8;
+  border-radius: 3px;
+  background-color: #262626;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
+.p-tag.p-tag-info {
+  background-color: #262626!important;
+  color: rgba(255, 255, 255, 0.87)!important;
+  border: 1px solid #BA68C8;
+  margin: 2px;
+}

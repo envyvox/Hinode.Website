@@ -1,0 +1,50 @@
+<p-table #d [value]="data" styleClass="p-datatable-sm" stateStorage="session" autoLayout="autoLayout"
+         [globalFilterFields]="['categories','command','summary','examples']">
+  <ng-template pTemplate="caption">
+    <div class="p-fluid p-grid">
+      <div class="p-sm-12 p-md-12">
+        <div *ngFor="let category of commandCategories" class="p-d-inline-flex">
+            <div pRipple class="category" [ngStyle]="{'border-color': categoryBorderColor(category.value)}"
+                 (click)="Filter(category.value)">
+              {{category.value | commandCategoryLocalize}}
+            </div>
+        </div>
+      </div>
+      <div class="p-sm-12 p-md-12">
+        <span class="p-input-icon-left p-ml-auto">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="d.filterGlobal($event.target.value, 'contains')"
+                 placeholder="Поиск" />
+        </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Категории</th>
+      <th>Команда</th>
+      <th>Описание</th>
+      <th>Примеры использования</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-d>
+    <tr>
+      <td>
+        <div *ngFor="let category of d.categories">
+          <div class="category" [ngStyle]="{'border-color': categoryBorderColor(category)}">
+            {{category | commandCategoryLocalize}}
+          </div>
+        </div>
+      </td>
+      <td>
+        <p-tag value="{{d.command}}" severity="info"></p-tag>
+      </td>
+      <td>
+        {{d.summary}}
+      </td>
+      <td>
+        <p-tag *ngFor="let usage of d.usages" value="{{usage}}" severity="info"></p-tag>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
