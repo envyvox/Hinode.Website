@@ -23,6 +23,7 @@
     <tr>
       <th>Категории</th>
       <th>Команда</th>
+      <th>Локация</th>
       <th>Описание</th>
       <th>Примеры использования</th>
     </tr>
@@ -38,6 +39,9 @@
       </td>
       <td>
         <p-tag value="{{d.command}}" severity="info"></p-tag>
+      </td>
+      <td>
+        {{d.location | locationLocalize}}
       </td>
       <td>
         {{d.summary}}

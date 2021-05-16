@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CommandCategoryLocalizePipe } from './pipes/enum-to-string.pipe';
+import { CommandCategoryLocalizePipe } from './pipes/commandCategoryLocalize.pipe';
+import {LocationLocalizePipe} from './pipes/locationLocalize.pipe';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    CommandCategoryLocalizePipe
+    CommandCategoryLocalizePipe,
+    LocationLocalizePipe
   ],
   exports: [
-    CommandCategoryLocalizePipe
+    CommandCategoryLocalizePipe,
+    LocationLocalizePipe
   ]
 })
 export class SharedModule { }
