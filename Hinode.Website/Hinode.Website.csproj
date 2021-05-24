@@ -16,14 +16,14 @@
         </PackageReference>
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Hinode.Website.Service\Hinode.Website.Service.csproj" />
-    </ItemGroup>
-
     <PropertyGroup>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <NoWarn>$(NoWarn);1591</NoWarn>
     </PropertyGroup>
+
+    <Target Name="GenerateApiClientSourceCode" BeforeTargets="CoreCompile;PrepareResource">
+        <Exec Command="$(NSwagExe_Net50) run client.nswag.json /variables:Configuration=$(Configuration),OutDir=$(OutDir)" />
+    </Target>
 
     <Target Name="NSwag" AfterTargets="Build">
         <Copy SourceFiles="@(ReferencePath)" DestinationFolder="$(OutDir)References" />

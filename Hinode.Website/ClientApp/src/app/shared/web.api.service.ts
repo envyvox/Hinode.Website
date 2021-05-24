@@ -101,7 +101,7 @@ export class CommandService extends ServiceBase {
     }
 
     categoryList(category: number): Observable<CommandInfo[]> {
-        let url_ = this.baseUrl + "/{category}";
+        let url_ = this.baseUrl + "/api/command/{category}";
         if (category === undefined || category === null)
             throw new Error("The parameter 'category' must be defined.");
         url_ = url_.replace("{category}", encodeURIComponent("" + category));

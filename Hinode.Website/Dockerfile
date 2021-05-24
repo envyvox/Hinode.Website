@@ -2,8 +2,6 @@
 
 # Copy everything else and build
 COPY Hinode.Website ./Hinode.Website
-COPY Hinode.Website.Framework ./Hinode.Website.Framework
-COPY Hinode.Website.Service ./Hinode.Website.Service
 
 RUN dotnet restore Hinode.Website/Hinode.Website.csproj
 RUN dotnet publish Hinode.Website/*.csproj -c Release -o out

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommandService, CommandInfo, CommandCategory } from '../shared/web.api.service';
-import { SelectItem} from 'primeng/api';
+import { SelectItem } from 'primeng/api';
 import { EnumEx } from '../shared/enumEx';
 
 @Component({
